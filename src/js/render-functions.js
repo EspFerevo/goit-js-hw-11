@@ -25,7 +25,7 @@ export function displayImages(images) {
     gallery.appendChild(card);
   });
 
-  new SimpleLightbox('#gallery .image-card');
+  new SimpleLightbox('#gallery .image-card').refresh();
 }
 
 function createImageCard(image) {
