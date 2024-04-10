@@ -2,6 +2,7 @@
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import simpleLightbox from 'simplelightbox';
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -24,10 +25,12 @@ export function displayImages(images) {
     const card = createImageCard(image);
     gallery.appendChild(card);
   });
+
+  new SimpleLightbox('#gallery .image-card');
 }
 
 function createImageCard(image) {
-  const card = document.createElement('div');
+  const card = document.createElement('a');
   card.classList.add('image-card');
 
   const img = document.createElement('img');
