@@ -2,7 +2,6 @@
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import simpleLightbox from 'simplelightbox';
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -32,9 +31,10 @@ export function displayImages(images) {
 function createImageCard(image) {
   const card = document.createElement('a');
   card.classList.add('image-card');
+  card.href = image.largeImageURL;
 
   const img = document.createElement('img');
-  img.src = image.previewURL;
+  img.src = image.webformatURL;
   img.alt = image.tags;
 
   const likes = document.createElement('p');
