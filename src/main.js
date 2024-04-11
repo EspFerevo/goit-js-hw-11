@@ -8,7 +8,7 @@ import { displayImages } from './js/render-functions.js';
 
 document
   .getElementById('search-form')
-  .addEventListener('submit', async function (event) {
+  .addEventListener('submit', function (event) {
     event.preventDefault();
     const query = document.getElementById('search-input').value.trim();
     if (query === '') {
@@ -22,11 +22,14 @@ document
     const loader = document.getElementById('loader');
     loader.style.display = 'block';
 
-    try {
-      const images = await searchImages(query);
-      displayImages(images);
-    } catch (error) {
-    } finally {
-      loader.style.display = 'none';
-    }
+    searchImages(query)
+      .then(images => {
+        displayImages(images);
+      })
+      .catch(error => {
+        // Обработка ошибок
+      })
+      .finally(() => {
+        loader.style.display = 'none';
+      });
   });

@@ -1,28 +1,10 @@
 @import url('./reset.css');
-
-/* default */
-
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
+/* Body styles */
 
 body {
   background-color: whitesmoke;
 }
-
-/* form styles  */
+/* Form styles */
 
 #search-form {
   position: relative;
@@ -35,18 +17,28 @@ body {
 
 #search-form input[type='text'] {
   font-weight: bold;
+  text-align: center;
+  width: 220px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 25%;
 }
 
 #search-form .sub-btn {
+  height: 40px;
+  width: 70px;
   background-color: midnightblue;
   color: white;
   border: 2px black solid;
+  border-radius: 50%;
 
   transition: background-color 0.2s ease;
 }
 #search-form .sub-btn:hover {
   background-color: blueviolet;
 }
+
+/* Gallery styles */
 
 #gallery {
   display: flex;
@@ -63,7 +55,16 @@ body {
   box-shadow: 0 6px 8px burlywood;
 }
 
-/* Loader styles  */
+.metadata-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  gap: 10px;
+  align-items: center;
+  /* border-top: 3px solid black; */
+}
+
+/* Loader styles */
 
 #loader {
   position: fixed;

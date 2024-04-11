@@ -25,7 +25,13 @@ export function displayImages(images) {
     gallery.appendChild(card);
   });
 
-  new SimpleLightbox('#gallery .image-card').refresh();
+  const lightbox = new SimpleLightbox('#gallery .image-card', {
+    captionsData: 'alt',
+    captionsPosition: 'bottom',
+    captionDelay: 250,
+  });
+
+  lightbox.refresh();
 }
 
 function createImageCard(image) {
@@ -58,13 +64,6 @@ function createImageCard(image) {
 
   card.appendChild(img);
   card.appendChild(metadataContainer);
-
-  card.addEventListener('click', function (event) {
-    event.preventDefault();
-    iziToast.show({
-      title: image.tags,
-    });
-  });
 
   return card;
 }
