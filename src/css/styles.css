@@ -18,6 +18,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  background-color: whitesmoke;
+}
+
 /* form styles  */
 
 #search-form {
@@ -29,6 +33,21 @@
   transform: translateX(-50%);
 }
 
+#search-form input[type='text'] {
+  font-weight: bold;
+}
+
+#search-form .sub-btn {
+  background-color: midnightblue;
+  color: white;
+  border: 2px black solid;
+
+  transition: background-color 0.2s ease;
+}
+#search-form .sub-btn:hover {
+  background-color: blueviolet;
+}
+
 #gallery {
   display: flex;
   flex-wrap: wrap;
@@ -37,10 +56,11 @@
 
 .image-card {
   display: flex;
-  align-items: center;
-  width: 360px;
-  height: 200px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  width: calc(25% - 20px);
+  margin: 10px;
+
+  box-shadow: 0 6px 8px burlywood;
 }
 
 /* Loader styles  */

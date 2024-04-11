@@ -37,23 +37,34 @@ function createImageCard(image) {
   img.src = image.webformatURL;
   img.alt = image.tags;
 
+  const metadataContainer = document.createElement('div');
+  metadataContainer.classList.add('metadata-container');
+
   const likes = document.createElement('p');
   likes.textContent = `Likes: ${image.likes}`;
+  metadataContainer.appendChild(likes);
 
   const views = document.createElement('p');
   views.textContent = `Views: ${image.views}`;
+  metadataContainer.appendChild(views);
 
   const comments = document.createElement('p');
   comments.textContent = `Comments: ${image.comments}`;
+  metadataContainer.appendChild(comments);
 
   const downloads = document.createElement('p');
   downloads.textContent = `Downloads: ${image.downloads}`;
+  metadataContainer.appendChild(downloads);
 
   card.appendChild(img);
-  card.appendChild(likes);
-  card.appendChild(views);
-  card.appendChild(comments);
-  card.appendChild(downloads);
+  card.appendChild(metadataContainer);
+
+  card.addEventListener('click', function (event) {
+    event.preventDefault();
+    iziToast.show({
+      title: image.tags,
+    });
+  });
 
   return card;
 }
