@@ -18,10 +18,10 @@ export function displayImages(images) {
 
   gallery.innerHTML = '';
 
-  images.map(image => {
-    const card = createImageCard(image);
-    gallery.appendChild(card);
-  });
+  const imageCards = images.map(image => createImageCard(image));
+  gallery.append(...imageCards);
+
+  lightbox.refresh();
 }
 
 function createImageCard(image) {
