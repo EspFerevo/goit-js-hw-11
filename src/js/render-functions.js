@@ -16,8 +16,6 @@ lightbox.refresh();
 export function displayImages(images) {
   const gallery = document.getElementById('gallery');
 
-  gallery.innerHTML = '';
-
   const imageCards = images.map(image => createImageCard(image));
   gallery.append(...imageCards);
 

@@ -17,37 +17,12 @@ document
       return;
     }
 
+    gallery.innerHTML = '';
+
     document.getElementById('search-input').value = '';
 
     const loader = document.getElementById('loader');
     loader.style.display = 'block';
-
-    //   searchImages(query)
-    //     .then(data => {
-    //       if (data.hits.length === 0) {
-    //         throw new Error('No images found');
-    //       }
-    //       return data.hits;
-    //     })
-
-    //     .then(images => {
-    //       if (images.length === 0) {
-    //         iziToast.error({
-    //           title: 'Error',
-    //           message:
-    //             'Sorry, there are no images matching your search query. Please try again!',
-    //         });
-    //         return;
-    //       }
-    //       displayImages(images);
-    //     })
-
-    //     .catch(error => {})
-
-    //     .finally(() => {
-    //       loader.style.display = 'none';
-    //     });
-    // });
 
     searchImages(query)
       .then(data => {
@@ -58,6 +33,7 @@ document
         }
         return data.hits;
       })
+
       .then(images => {
         if (images.length === 0) {
           return;
